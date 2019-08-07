@@ -39,7 +39,7 @@
                 <form action="/Index/news" method="post">
                 <input type="submit" class="btn btn-success" value="powrót do formularza" />
                 </form>
-               <form action="Index/show_all" method="post">
+               <form action="/Index/show_all" method="post">
                <input type="submit" class="btn btn-success" value="pokaz wszystkich" />
                </form>
                <?php } else{?>
