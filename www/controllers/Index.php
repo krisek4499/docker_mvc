@@ -49,24 +49,25 @@ class Index extends Controller{
         $data_ur=$_POST["date"];
        
         $email=$_POST["email"];
-        $imie = htmlentities($imie,ENT_QUOTES,"UTF-8" );
-        $tab[0]=$imie;
-        $nazwisko = htmlentities($nazwisko,ENT_QUOTES,"UTF-8" );
-        $tab[1]=$nazwisko;
-        $zawod = htmlentities($zawod,ENT_QUOTES,"UTF-8" );
-        $tab[2]=$zawod;
-        $nr_telefonu = htmlentities($nr_telefonu,ENT_QUOTES,"UTF-8" );
-        $tab[3]=$nr_telefonu;
-        $tab[4]=$data_ur;
-        $email = htmlentities($email,ENT_QUOTES,"UTF-8" );
-        $tab[5]=$email;
+    
+         $imie = htmlentities($imie,ENT_QUOTES,"UTF-8" );
+         $tab[0]=$imie;
+         $nazwisko = htmlentities($nazwisko,ENT_QUOTES,"UTF-8" );
+         $tab[1]=$nazwisko;
+         $zawod = htmlentities($zawod,ENT_QUOTES,"UTF-8" );
+         $tab[2]=$zawod;
+         $nr_telefonu = htmlentities($nr_telefonu,ENT_QUOTES,"UTF-8" );
+         $tab[3]=$nr_telefonu;
+         $tab[4]=$data_ur;
+         $email = htmlentities($email,ENT_QUOTES,"UTF-8" );
+         $tab[5]=$email;
         /*$zm= new Index_model();
         $foo=$zm -> Valid($tab);*/
       
         //if($foo=="Poprawnie wypełniony formularz"){
           $instance=connect_DB::getInstance();
-         $query="INSERT INTO testowa values ('',?,?,?,?,?,?)";
-       //$query="INSERT INTO testowa values ('','$imie','$nazwisko','$zawod','$nr_telefonu','$data_ur','$email')";
+          $query="INSERT INTO testowa values (NULL,?,?,?,?,?,?)";
+          //$query="INSERT INTO testowa values (NULL,'$imie','$nazwisko','$zawod','$nr_telefonu','$data_ur','$email')";
           $stmt = $instance->prepare($query);
           $stmt->bindParam(1, $imie,  PDO::PARAM_STR,12);
           $stmt->bindParam(2, $nazwisko, PDO::PARAM_STR, 12);
@@ -76,7 +77,7 @@ class Index extends Controller{
           $stmt->bindParam(6, $email, PDO::PARAM_STR,12);
           $stmt->execute();
           $store="store";
- 
+          $user=$data;
           $user= new Model();
           $user = $user->getAll();
          

@@ -55,7 +55,7 @@ $(function(){
    if(isValid===true ){
       const sendEmail = $.ajax({
             type: "POST",
-            url: "../email.php",
+            url: "../www/email.php",
     
        
             data: //formData,

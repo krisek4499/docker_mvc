@@ -24,8 +24,8 @@ class Router{
             $this -> control = new $this -> controller ($this -> params);
              }
             else{
-                require_once 'views/Index/News.php';
-                 //echo 'Nieznana metoda!';
+               // require_once 'views/Index/News.php';
+                 echo 'Nieznana metoda!';
                 }
     }
 }

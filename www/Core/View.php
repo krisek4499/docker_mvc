@@ -17,11 +17,7 @@ class View{
     
           $this -> page=$Where;
          }
-		 else if($Where==""){
-          require_once 'views/Index/News.php';
-    
-          $this -> page="news";
-         }
+		 
          else if($Where==="store"){
             require_once 'views/Index/store.php';
       
