@@ -1,0 +1,56 @@
+version: "3"
+
+services:
+  webserver:
+    build: 
+      context: ./bin/webserver
+    container_name: '7.3.x-webserver'
+    restart: 'always'
+    ports:
+      - "80:80"
+      #- "443:443"
+    links: 
+      - mysql
+    volumes: 
+      - ./www:/var/www/html
+      - ./config/php/php.ini:/usr/local/etc/php/php.ini
+      - ./config/vhosts:/etc/apache2/sites-enabled
+      - ./logs/apache2:/var/log/apache2
+  mysql:
+    build: ./bin/mysql
+    container_name: '5.7-mysql'
+    restart: 'always'
+    ports:
+    
+      - "3306:3306"
+    volumes: 
+      - ./dump/dump.sql:/docker-entrypoint-initdb.d/dump.sql
+      - ./data/mysql:/var/lib/mysql
+      - ./logs/mysql:/var/log/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: tiger
+      MYSQL_DATABASE: test
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: 'sc-phpmyadmin'
+    links:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: docker
+      PMA_PASSWORD: docker
+      MYSQL_ROOT_PASSWORD: tiger
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+    ports:
+      - '8080:80'
+    volumes: 
+      - /sessions
+  redis:
+    container_name: 'sc-redis'
+    image: redis:latest
+    ports:
+      - "6379:6379"
