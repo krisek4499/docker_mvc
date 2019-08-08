@@ -14,9 +14,9 @@ class Index extends Controller{
      $action=$params;
      if(isset($params[1])) $action = ucfirst($params[1]);
 
-     $this -> news =$params[1];
+    $this -> news =$params[1];
      if(isset($params[2])) $this -> date = ucfirst($params[2]);
-     $this -> user ="formularz";
+     $this -> user ="form";
      if(isset($params[3])) $this-> time = ucfirst($params[3]);
      $this -> $action($this -> news, $this -> user);
     }
@@ -157,7 +157,7 @@ class Index extends Controller{
        
      
         $user= new Index_model();
-        $user = $user->Inf();
+        $user = $user->();
         $email="email";
 
         $this -> view -> Render($email,$user);
