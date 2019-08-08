@@ -9,7 +9,7 @@
    <link href="../css/bootstrap.min.css" rel="stylesheet">
    <link href="../css/apps.css" rel="stylesheet">
    <script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
-   <script src="../js/validation.js" type="text/javascript"></script>
+   <script src="../js/validation1.js" type="text/javascript"></script>
  </head>
  <body>
 
@@ -64,7 +64,7 @@
 
          <div class="form-group mb-3 ">
            <div class="input-group-prepend">
-   <span class="input-group-text " id="basic-addon1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Eail&nbsp;&nbsp;&nbsp;&nbsp;</strong></span> 
+   <span class="input-group-text " id="basic-addon1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;</strong></span> 
              <input type="email" name="email" class="form-control" required="required" placeholder="Wpisz tu swój Email" value="" >
             </div>
           </div>
