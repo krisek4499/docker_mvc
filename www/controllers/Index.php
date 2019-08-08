@@ -50,21 +50,17 @@ class Index extends Controller{
        
         $email=$_POST["email"];
     
-         $imie = htmlentities($imie,ENT_QUOTES,"UTF-8" );
-         $tab[0]=$imie;
-         $nazwisko = htmlentities($nazwisko,ENT_QUOTES,"UTF-8" );
-         $tab[1]=$nazwisko;
-         $zawod = htmlentities($zawod,ENT_QUOTES,"UTF-8" );
-         $tab[2]=$zawod;
-         $nr_telefonu = htmlentities($nr_telefonu,ENT_QUOTES,"UTF-8" );
-         $tab[3]=$nr_telefonu;
-         $tab[4]=$data_ur;
-         $email = htmlentities($email,ENT_QUOTES,"UTF-8" );
-         $tab[5]=$email;
-        /*$zm= new Index_model();
-        $foo=$zm -> Valid($tab);*/
-      
-        //if($foo=="Poprawnie wypełniony formularz"){
+          $imie = htmlentities($imie,ENT_QUOTES,"UTF-8" );
+          $tab[0]=$imie;
+          $nazwisko = htmlentities($nazwisko,ENT_QUOTES,"UTF-8" );
+          $tab[1]=$nazwisko;
+          $zawod = htmlentities($zawod,ENT_QUOTES,"UTF-8" );
+          $tab[2]=$zawod;
+          $nr_telefonu = htmlentities($nr_telefonu,ENT_QUOTES,"UTF-8" );
+          $tab[3]=$nr_telefonu;
+          $tab[4]=$data_ur;
+          $email = htmlentities($email,ENT_QUOTES,"UTF-8" );
+          $tab[5]=$email;
           $instance=connect_DB::getInstance();
           $query="INSERT INTO testowa values (NULL,?,?,?,?,?,?)";
           //$query="INSERT INTO testowa values (NULL,'$imie','$nazwisko','$zawod','$nr_telefonu','$data_ur','$email')";
@@ -83,12 +79,7 @@ class Index extends Controller{
          
 
            $this -> view -> Render($store,$user);
-       // }
-          /* else{
-               $user=$foo;
-               $store="store";
-            $this -> view -> Render($store,$user);
-           }*/
+      
     }
 
     private function Delete(){

@@ -3,18 +3,18 @@
 require_once 'conect.php';
 class send{
   function __construct(){}
-    public function Inf($em) {
-    $emails=$em;
+    public function check_email($foo) {
+    $emails=$foo;
     $instance=connect_DB::getInstance();
     $q = "SELECT email FROM testowa where email='$emails'";
     $stm = $instance->prepare($q);
     $stm->execute();
     $data = $stm->fetchAll(PDO::FETCH_OBJ);
-    if($data!=null) $jest="tak";
-    else $jest="Formularz wypelniony pomyslnie";
-    return $jest;
+    if($data!=null) $answer="tak";
+    else $answer="Formularz wypelniony pomyslnie";
+    return $answer;
   }
 }
 $emails=$_POST['email'];
-$info=send::Inf($emails);
+$info=send::check_email($emails);
 echo json_encode($info);
