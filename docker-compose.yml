@@ -15,7 +15,7 @@ services:
       - ./www:/var/www/html
       - ./config/php/php.ini:/usr/local/etc/php/php.ini
       - ./config/vhosts:/etc/apache2/sites-enabled
-      - ./logs/apache2:/var/log/apache2
+      #- ./logs/apache2:/var/log/apache2
   mysql:
     build: ./bin/mysql
     container_name: '5.7-mysql'
@@ -25,8 +25,8 @@ services:
       - "3306:3306"
     volumes: 
       - ./dump/dump.sql:/docker-entrypoint-initdb.d/dump.sql
-      - ./data/mysql:/var/lib/mysql
-      - ./logs/mysql:/var/log/mysql
+      #- ./data/mysql:/var/lib/mysql
+      #- ./logs/mysql:/var/log/mysql
     environment:
       MYSQL_ROOT_PASSWORD: tiger
       MYSQL_DATABASE: test
