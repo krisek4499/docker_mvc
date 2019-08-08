@@ -19,7 +19,7 @@
        <div class="col-sm-12">
          <?php
               if($User) {?>
-                <br><i>Imie: <?= $User[0] -> imie ?></i></br>
+                <br><i>Imię: <?= $User[0] -> imie ?></i></br>
                 <br><i>Nazwisko: <?= $User[0] -> nazwisko ?></i></br>
                 <br><i>Zawód: <?= $User[0] -> zawod ?></i></br>
                 <br><i>Numer telefonu: <?=  $User[0] -> nr_telefonu ?></i></br>

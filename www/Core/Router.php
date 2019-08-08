@@ -12,9 +12,9 @@ class Router{
         $this -> params = explode("/", $this -> request);
     
         $this -> controller = $this -> params[0];
-        if($this -> controller == "index.php") $this -> controller = "news";
+        if($this -> controller == "index.php") $this -> controller = "Index";
         //ucfirst pierwsza litera duza
-        //$this -> controller = ucfirst($this -> controller); 
+        $this -> controller = ucfirst($this -> controller); 
         
         $file = 'controllers/'. $this -> controller . '.php';
 
@@ -24,8 +24,8 @@ class Router{
             $this -> control = new $this -> controller ($this -> params);
              }
             else{
-               // require_once 'views/Index/News.php';
-                 echo 'Nieznana metoda!';
+                require_once 'views/Index/News.php';
+                 //echo 'Nieznana metoda!';
                 }
     }
 }
