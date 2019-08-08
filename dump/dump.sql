@@ -25,24 +25,24 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `testowa`
+-- Struktura tabeli dla tabeli `form_base`
 --
 
-CREATE TABLE `testowa` (
+CREATE TABLE `form_base` (
   `id` int(11) NOT NULL,
-  `imie` varchar(30) NOT NULL,
-  `nazwisko` varchar(30) NOT NULL,
-  `zawod` varchar(20) NOT NULL,
-  `nr_telefonu` int(9) NOT NULL,
-  `data_ur` date NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `surname` varchar(30) NOT NULL,
+  `trade` varchar(20) NOT NULL,
+  `number` int(9) NOT NULL,
+  `date` date NOT NULL,
   `email` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `testowa`
+-- Zrzut danych tabeli `form_base`
 --
 
-INSERT INTO `testowa` (`id`, `imie`, `nazwisko`, `zawod`, `nr_telefonu`, `data_ur`, `email`) VALUES
+INSERT INTO `form_base` (`id`, `name`, `surname`, `trade`, `number`, `date`, `email`) VALUES
 (1, 'Krzysztof', 'nawrocki', 'imformatyk', 785214538, '1989-03-28', 'frotas@wp.pl'),
 (380, 'damian', 'gwis', 'pilkarz', 999999990, '2019-07-18', 'damiano@poczta.onet.pl'),
 (381, 'marcino', 'Sami', 'ksiegowy', 999999333, '2011-07-11', 'sami@poczta.onet.pl'),
@@ -55,9 +55,9 @@ INSERT INTO `testowa` (`id`, `imie`, `nazwisko`, `zawod`, `nr_telefonu`, `data_u
 --
 
 --
--- Indeksy dla tabeli `testowa`
+-- Indeksy dla tabeli `form_base`
 --
-ALTER TABLE `testowa`
+ALTER TABLE `form_base`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -65,9 +65,9 @@ ALTER TABLE `testowa`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `testowa`
+-- AUTO_INCREMENT dla tabeli `form_base`
 --
-ALTER TABLE `testowa`
+ALTER TABLE `form_base`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=462;
 COMMIT;
 

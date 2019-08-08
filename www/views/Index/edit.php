@@ -34,42 +34,42 @@
          <div class="form-group mb-3 ">
             <div class="input-group-prepend">
              <span class="input-group-text " id="basic-addon1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Imię&nbsp;&nbsp;&nbsp;&nbsp;</strong></span>
-             <input type="text" name="name"  class="form-control" aria-describedby="basic-addon1" required="required" placeholder="Wpisz tu swoje Imię" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->imie?>  />
+             <input type="text" name="name"  class="form-control" aria-describedby="basic-addon1" required="required" placeholder="Wpisz tu swoje Imię" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->name ?>  />
            </div>
          </div>
 
          <div class="form-group mb-3 ">
            <div class="input-group-prepend">
              <span class="input-group-text" id="basic-addon1"><strong>Nazwisko&nbsp; </strong></span>
-             <input type="text" name="surname" class="form-control" required="required" placeholder="Wpisz tu swoje Nazwisko" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->nazwisko?> />
+             <input type="text" name="surname" class="form-control" required="required" placeholder="Wpisz tu swoje Nazwisko" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->surname ?> />
             </div>
          </div>
 
          <div class="form-group mb-3 ">
            <div class="input-group-prepend">
              <span class="input-group-text" id="basic-addon1"><strong>&nbsp;&nbsp;Numer&nbsp;&nbsp;&nbsp;</strong></span>
-             <input type="text" name="number" class="form-control" required="required" placeholder="Wpisz tu swój numer telefonu" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->nr_telefonu?> pattern="[0-9]*[0-9]{8}"/>
+             <input type="text" name="number" class="form-control" required="required" placeholder="Wpisz tu swój numer telefonu" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->number ?> pattern="[0-9]*[0-9]{8}"/>
             </div>
          </div>
      
          <div class="form-group mb-3 ">
            <div class="input-group-prepend">
              <span class="input-group-text" id="basic-addon1"><strong>&nbsp;&nbsp;Zawód&nbsp;&nbsp;&nbsp;</strong></span> 
-             <input type="text" name="trade" class="form-control" required="required"  placeholder="Wpisz tu swój zawód"onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->zawod?> >
+             <input type="text" name="trade" class="form-control" required="required"  placeholder="Wpisz tu swój zawód"onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->trade ?> >
             </div>
          </div>
         
          <div class="form-group mb-3 ">
            <div class="input-group-prepend">
              <span class="input-group-text" id="basic-addon1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Data&nbsp;&nbsp;&nbsp;&nbsp;</strong></span> 
-             <input type="date" name="date" class="form-control" required="required" placeholder="Wpisz tu swoją date urodzenia" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->data_ur?> >
+             <input type="date" name="date" class="form-control" required="required" placeholder="Wpisz tu swoją date urodzenia" onkeyup="this.setAttribute('value', this.value);" value=<?=$User[0]->date ?> >
             </div>
          </div>
 
          <div class="form-group mb-3 ">
            <div class="input-group-prepend">
              <span class="input-group-text " id="basic-addon1"><strong>&nbsp;&nbsp;&nbsp;&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;</strong></span> 
-             <input type="email" name="email" class="form-control" required="required" placeholder="Wpisz tu swój Email" value=<?=$User[0]->email?> >
+             <input type="email" name="email" class="form-control" required="required" placeholder="Wpisz tu swój Email" value=<?=$User[0]->email ?> >
             </div>
           </div>
 

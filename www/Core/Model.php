@@ -7,7 +7,7 @@ class Model{
     public function getAll()
      {
          $instance=connect_DB::getInstance();
-         $q = 'SELECT id,imie,nazwisko,zawod,nr_telefonu,data_ur,email FROM testowa ORDER BY id DESC LIMIT 1';
+         $q = 'SELECT id,name,surname,trade,number,date,email FROM form_base ORDER BY id DESC LIMIT 1';
          $stm = $instance->prepare($q);
          $stm->execute();
          $data = $stm->fetchAll(PDO::FETCH_OBJ);
@@ -21,7 +21,7 @@ class Model{
      public function getAll2()
      {
          $instance=connect_DB::getInstance();
-         $q = 'SELECT id,imie,nazwisko,zawod,nr_telefonu,data_ur,email FROM testowa ORDER BY id ';
+         $q = 'SELECT id,name,surname,trade,number,date,email FROM form_base ORDER BY id ';
          $stm = $instance->prepare($q);
          $stm->execute();
          $data = $stm->fetchAll(PDO::FETCH_OBJ);
@@ -36,7 +36,7 @@ class Model{
      {
          $instance=connect_DB::getInstance();
          $ID=$id;
-         $q = "SELECT id,imie,nazwisko,zawod,nr_telefonu,data_ur,email FROM testowa Where id='$ID'";
+         $q = "SELECT id,name,surname,trade,number,date,email FROM form_base Where id='$ID'";
          $stm = $instance->prepare($q);
          $stm->execute();
          $data = $stm->fetchAll(PDO::FETCH_OBJ);

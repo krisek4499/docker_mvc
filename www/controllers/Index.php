@@ -38,38 +38,38 @@ class Index extends Controller{
 
     private function Store(){
        
-        $imie=$_POST["name"];
+        $name=$_POST["name"];
 
-        $nazwisko=$_POST["surname"];
+        $surname=$_POST["surname"];
 
-        $zawod=$_POST["trade"]; 
+        $trade=$_POST["trade"]; 
        
-        $nr_telefonu=$_POST["number"]; 
+        $number=$_POST["number"]; 
        
-        $data_ur=$_POST["date"];
+        $date=$_POST["date"];
        
         $email=$_POST["email"];
     
-          $imie = htmlentities($imie,ENT_QUOTES,"UTF-8" );
-          $tab[0]=$imie;
-          $nazwisko = htmlentities($nazwisko,ENT_QUOTES,"UTF-8" );
-          $tab[1]=$nazwisko;
-          $zawod = htmlentities($zawod,ENT_QUOTES,"UTF-8" );
-          $tab[2]=$zawod;
-          $nr_telefonu = htmlentities($nr_telefonu,ENT_QUOTES,"UTF-8" );
-          $tab[3]=$nr_telefonu;
-          $tab[4]=$data_ur;
+          $name= htmlentities($name,ENT_QUOTES,"UTF-8" );
+          $tab[0]=$name;
+          $surname = htmlentities($surname,ENT_QUOTES,"UTF-8" );
+          $tab[1]=$surname;
+          $trade = htmlentities($trade,ENT_QUOTES,"UTF-8" );
+          $tab[2]=$trade;
+          $number = htmlentities($number,ENT_QUOTES,"UTF-8" );
+          $tab[3]=$number;
+          $tab[4]=$date;
           $email = htmlentities($email,ENT_QUOTES,"UTF-8" );
           $tab[5]=$email;
           $instance=connect_DB::getInstance();
-          $query="INSERT INTO testowa values (NULL,?,?,?,?,?,?)";
+          $query="INSERT INTO form_base values (NULL,?,?,?,?,?,?)";
           //$query="INSERT INTO testowa values (NULL,'$imie','$nazwisko','$zawod','$nr_telefonu','$data_ur','$email')";
           $stmt = $instance->prepare($query);
-          $stmt->bindParam(1, $imie,  PDO::PARAM_STR,12);
-          $stmt->bindParam(2, $nazwisko, PDO::PARAM_STR, 12);
-          $stmt->bindParam(3, $zawod, PDO::PARAM_STR, 12);
-          $stmt->bindParam(4, $nr_telefonu, PDO::PARAM_INT);
-          $stmt->bindParam(5, $data_ur, PDO::PARAM_LOB);
+          $stmt->bindParam(1, $name,  PDO::PARAM_STR,12);
+          $stmt->bindParam(2, $surname, PDO::PARAM_STR, 12);
+          $stmt->bindParam(3, $trade, PDO::PARAM_STR, 12);
+          $stmt->bindParam(4, $number, PDO::PARAM_INT);
+          $stmt->bindParam(5, $date, PDO::PARAM_LOB);
           $stmt->bindParam(6, $email, PDO::PARAM_STR,12);
           $stmt->execute();
           $store="store";
@@ -88,13 +88,13 @@ class Index extends Controller{
         $user= new Model();
         $user = $user->getBy($value);
         $instance=connect_DB::getInstance();
-        $q = "SELECT imie FROM testowa WHERE id='$value'";
+        $q = "SELECT name FROM form_base WHERE id='$value'";
         $data = $instance->query($q);
         $row = $data->fetch();
-        $user=$row['imie'];
+        $user=$row['name'];
 
       
-        $query="DELETE FROM testowa  WHERE id= '$value'";
+        $query="DELETE FROM form_base  WHERE id= '$value'";
           $stm = $instance->prepare($query);
           $stm->execute();
         $delete="delete";
@@ -114,27 +114,27 @@ class Index extends Controller{
     private function Update(){
        
         $id=$_POST["id"];
-        $imie=$_POST["name"];
-        $imie = htmlentities($imie,ENT_QUOTES,"UTF-8" );
-        $nazwisko=$_POST["surname"];
-        $nazwisko = htmlentities($nazwisko,ENT_QUOTES,"UTF-8" );
-        $zawod=$_POST["trade"];
-        $zawod = htmlentities($zawod,ENT_QUOTES,"UTF-8" );
-        $nr_telefonu=$_POST["number"];
-        $nr_telefonu = htmlentities($nr_telefonu,ENT_QUOTES,"UTF-8" );
-        $data_ur=$_POST["date"];
+        $name=$_POST["name"];
+        $name = htmlentities($name,ENT_QUOTES,"UTF-8" );
+        $surname=$_POST["surname"];
+        $surname = htmlentities($surname,ENT_QUOTES,"UTF-8" );
+        $trade=$_POST["trade"];
+        $trade = htmlentities($trade,ENT_QUOTES,"UTF-8" );
+        $number=$_POST["number"];
+        $number = htmlentities($number,ENT_QUOTES,"UTF-8" );
+        $date=$_POST["date"];
         $email=$_POST["email"];
         $email = htmlentities($email,ENT_QUOTES,"UTF-8" );
 
         $instance=connect_DB::getInstance();
         //$query="UPDATE testowa SET imie='$imie', nazwisko='$nazwisko',zawod='$zawod',nr_telefonu='$nr_telefonu',data_ur='$data_ur' ,email='$email' WHERE id='$id'";
-        $query="UPDATE testowa SET imie=?, nazwisko=?,zawod=?,nr_telefonu=?,data_ur=?,email=? WHERE id='$id'";
+        $query="UPDATE form_base SET name=?, surname=?,trade=?,number=?,date=?,email=? WHERE id='$id'";
         $stmt = $instance->prepare($query);
-        $stmt->bindParam(1, $imie,  PDO::PARAM_STR,12);
-        $stmt->bindParam(2, $nazwisko, PDO::PARAM_STR, 12);
-        $stmt->bindParam(3, $zawod, PDO::PARAM_STR, 12);
-        $stmt->bindParam(4, $nr_telefonu, PDO::PARAM_INT);
-        $stmt->bindParam(5, $data_ur, PDO::PARAM_LOB);
+        $stmt->bindParam(1, $name,  PDO::PARAM_STR,12);
+        $stmt->bindParam(2, $surname, PDO::PARAM_STR, 12);
+        $stmt->bindParam(3, $trade, PDO::PARAM_STR, 12);
+        $stmt->bindParam(4, $number, PDO::PARAM_INT);
+        $stmt->bindParam(5, $date, PDO::PARAM_LOB);
         $stmt->bindParam(6, $email, PDO::PARAM_STR,12);
         $stmt->execute();
 
@@ -157,7 +157,7 @@ class Index extends Controller{
        
      
         $user= new Index_model();
-        $user = $user->();
+        $user = $user->check_email();
         $email="email";
 
         $this -> view -> Render($email,$user);

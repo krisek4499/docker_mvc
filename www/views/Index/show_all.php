@@ -44,12 +44,12 @@
           ?>
           <table class="table table-hover border border-secondary rounded"   style="width: 100%; height: 5em">
           <tr>
-          <td style="width:5%;" ><?= $User[$i] -> id?></td>
-          <td style="width:12%;"  > <?= $User[$i] -> imie ?></td>
-          <td style="width:12%;"  > <?= $User[$i] -> nazwisko ?></td>
-          <td style="width:15%;"  > <?= $User[$i] -> zawod ?></td>
-          <td style="width:15%;" > <?= $User[$i] -> nr_telefonu ?></td>
-          <td style="width:15%;"  > <?= $User[$i] -> data_ur ?></td>
+          <td style="width:5%;" ><?= $User[$i] -> id ?></td>
+          <td style="width:12%;"  > <?= $User[$i] -> name ?></td>
+          <td style="width:12%;"  > <?= $User[$i] -> surname ?></td>
+          <td style="width:15%;"  > <?= $User[$i] -> trade ?></td>
+          <td style="width:15%;" > <?= $User[$i] -> number ?></td>
+          <td style="width:15%;"  > <?= $User[$i] -> date ?></td>
           <td style="width:15%;" > <?= $User[$i] -> email ?></td>
           <td style="width:11%;" ><form action="edit" method="post">
 	        <input type="hidden" name="id" value=<?php echo $User[$i] -> id ; ?> />

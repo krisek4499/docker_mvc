@@ -2,7 +2,7 @@
 require_once 'conect.php';
 
 class Index_model extends Model {
-    protected $table = 'testowa';
+    protected $table = 'form_base';
     public function __construct(){
        parent::__construct();
     }
@@ -11,7 +11,7 @@ class Index_model extends Model {
         public function check_email($foo) {
             $emails=$foo;
        $instance=connect_DB::getInstance();
-       $q = "SELECT email FROM testowa where email='$emails'";
+       $q = "SELECT email FROM form_base where email='$emails'";
        $stm = $instance->prepare($q);
        $stm->execute();
        $data = $stm->fetchAll(PDO::FETCH_OBJ);

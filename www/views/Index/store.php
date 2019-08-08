@@ -31,11 +31,11 @@
        <div class="col-sm-12">
           <?php
            if($User!="niepoprawny email"&&$User!="wypełnij wszystkie pola"&&$User!="niepoprawny numer telefonu") {?>
-                <br><i>Imię: <?= $User[0] -> imie ?></i></br>
-                <br><i>Nazwisko: <?= $User[0] -> nazwisko ?></i></br>
-                <br><i>Zawód: <?= $User[0] -> zawod ?></i></br>
-                <br><i>Numer telefonu: <?=  $User[0] -> nr_telefonu ?></i></br>
-                <br><i>Data urodzenia: <?= $User[0] -> data_ur ?></i></br>
+                <br><i>Imię: <?= $User[0] -> name ?></i></br>
+                <br><i>Nazwisko: <?= $User[0] -> surname ?></i></br>
+                <br><i>Zawód: <?= $User[0] -> trade ?></i></br>
+                <br><i>Numer telefonu: <?=  $User[0] -> number ?></i></br>
+                <br><i>Data urodzenia: <?= $User[0] -> date ?></i></br>
                 <br><i>Email: <?= $User[0] -> email ?></i></br>
                 <form action="delete" method="post">
 	          <input type="hidden" name="id" value="<?php echo $User[0] -> id ; ?>" />
